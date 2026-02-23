@@ -1,0 +1,49 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+  
+  <PropertyGroup>
+    <ErrorOnDuplicatePublishOutputFiles>false</ErrorOnDuplicatePublishOutputFiles>
+  </PropertyGroup>
+  
+  <ItemGroup>
+    <PackageReference Include="Amazon.Extensions.CognitoAuthentication" Version="2.5.5" />
+    <PackageReference Include="AutoMapper" Version="13.0.1" />
+    <PackageReference Include="AWSSDK.Core" Version="3.7.400.31" />
+    <PackageReference Include="AWSSDK.Extensions.NETCore.Setup" Version="3.7.301" />
+    <PackageReference Include="AWSSDK.SecretsManager" Version="3.7.400.31" />
+    <PackageReference Include="AWSSDK.Textract" Version="3.7.400.31" />
+    <PackageReference Include="FluentValidation" Version="11.10.0" />
+    <PackageReference Include="GenFu" Version="1.6.0" />
+    <PackageReference Include="itext7" Version="8.0.5" />
+    <PackageReference Include="itext7.bouncy-castle-adapter" Version="8.0.5" />
+    <PackageReference Include="itext7.pdfhtml" Version="5.0.5" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="8.0.8" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.8">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.11.1" />
+    <PackageReference Include="Moq" Version="4.20.72" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="System.Linq" Version="4.3.0" />
+    <PackageReference Include="xunit" Version="2.9.2" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.8.2">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="coverlet.collector" Version="6.0.2">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CandidatesMS\CandidatesMS.csproj" />
+  </ItemGroup>
+
+</Project>
