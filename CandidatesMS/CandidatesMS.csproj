@@ -1,0 +1,118 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <GenerateRuntimeConfigurationFiles>true</GenerateRuntimeConfigurationFiles>
+    <UserSecretsId>4d25d0f4-8384-43db-b314-d9caaf244ea9</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove=".platform - Copia\**" />
+    <Content Remove=".platform - Copia\**" />
+    <EmbeddedResource Remove=".platform - Copia\**" />
+    <None Remove=".platform - Copia\**" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <ErrorOnDuplicatePublishOutputFiles>false</ErrorOnDuplicatePublishOutputFiles>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Migrations\20210910082036_PassToProd1amSep10Migration.cs" />
+    <Compile Remove="Migrations\20210910082036_PassToProd1amSep10Migration.Designer.cs" />
+    <Compile Remove="Migrations\20210910085923_PassToProd4amSep10Migration.cs" />
+    <Compile Remove="Migrations\20210910085923_PassToProd4amSep10Migration.Designer.cs" />
+    <Compile Remove="Migrations\20220922172642_EntityCcoAndCc.cs" />
+    <Compile Remove="Migrations\20220922172642_EntityCcoAndCc.Designer.cs" />
+    <Compile Remove="Migrations\20220922173454_EntityCCOAndCC.cs" />
+    <Compile Remove="Migrations\20220922173454_EntityCCOAndCC.Designer.cs" />
+    <Compile Remove="Migrations\20220922174253_CCOandCC.cs" />
+    <Compile Remove="Migrations\20220922174253_CCOandCC.Designer.cs" />
+    <Compile Remove="Migrations\20220922174508_CCOandCC.cs" />
+    <Compile Remove="Migrations\20220922174508_CCOandCC.Designer.cs" />
+    <Compile Remove="Migrations\20220922174831_CCOandCC.cs" />
+    <Compile Remove="Migrations\20220922174831_CCOandCC.Designer.cs" />
+    <Compile Remove="Migrations\20220922180232_CCOandCC.cs" />
+    <Compile Remove="Migrations\20220922180232_CCOandCC.Designer.cs" />
+    <Compile Remove="Migrations\20220922180454_CCOandCC.cs" />
+    <Compile Remove="Migrations\20220922180454_CCOandCC.Designer.cs" />
+    <Compile Remove="Migrations\20220922181837_CCOandCC.cs" />
+    <Compile Remove="Migrations\20220922181837_CCOandCC.Designer.cs" />
+    <Compile Remove="Migrations\20220922182943_CCOandCC.cs" />
+    <Compile Remove="Migrations\20220922182943_CCOandCC.Designer.cs" />
+    <Compile Remove="Persistence\Entities\GenderCompany.cs" />
+    <Compile Remove="Persistence\Entities\MaritalStatusCompany.cs" />
+    <Compile Remove="Persistence\Infraestructure\GenderCompanyRepository.cs" />
+    <Compile Remove="Persistence\Infraestructure\MaritalStatusCompanyRepository.cs" />
+    <Compile Remove="Repositories\IGenderCompanyRepository.cs" />
+    <Compile Remove="Repositories\IMaritalStatusCompanyRepository.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\David Herrera\.nuget\packages\select.htmltopdf.netcore\23.1.0\contentFiles\any\any\Select.Html.dep" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Amazon.Extensions.CognitoAuthentication" Version="2.5.5" />
+    <PackageReference Include="AutoMapper" Version="13.0.1" />
+    <PackageReference Include="AWSSDK.Core" Version="3.7.400.31" />
+    <PackageReference Include="AWSSDK.Extensions.NETCore.Setup" Version="3.7.301" />
+    <PackageReference Include="AWSSDK.S3" Version="3.7.404.3" />
+    <PackageReference Include="AWSSDK.SecretsManager" Version="3.7.400.31" />
+    <PackageReference Include="AWSSDK.Textract" Version="3.7.400.31" />
+    <PackageReference Include="Azure.Identity" Version="1.13.2" />
+    <PackageReference Include="Azure.Security.KeyVault.Secrets" Version="4.7.0" />
+    <PackageReference Include="FluentValidation" Version="11.10.0" />
+    <PackageReference Include="FluentValidation.AspNetCore" Version="11.3.0" />
+    <PackageReference Include="GemBox.Document" Version="35.0.1869" />
+    <PackageReference Include="itext7" Version="8.0.5" />
+    <PackageReference Include="itext7.bouncy-castle-adapter" Version="8.0.5" />
+    <PackageReference Include="itext7.pdfhtml" Version="5.0.5" />
+    <PackageReference Include="MailKit" Version="4.8.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.8" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="8.0.8" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.8" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.8">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.8">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Nethereum.Web3" Version="4.26.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="8.0.8" />
+    <PackageReference Include="Select.HtmlToPdf" Version="24.1.0" />
+    <PackageReference Include="Select.HtmlToPdf.NetCore" Version="24.1.0" />
+    <PackageReference Include="SkiaSharp.NativeAssets.Linux" Version="2.88.8" />
+    <PackageReference Include="SkiaSharp.NativeAssets.Linux.NoDependencies" Version="2.88.8" />
+    <PackageReference Include="SpreadsheetLight" Version="3.5.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.8.1" />
+    <PackageReference Include="Swashbuckle.AspNetCore.Annotations" Version="6.8.1" />
+    <PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0" />
+    <PackageReference Include="System.Linq" Version="4.3.0" />
+    <PackageReference Include="System.Text.Encoding.CodePages" Version="8.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include=".ebextensions\" />
+    <Folder Include="Files\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include=".platform\nginx\conf.d\proxy.conf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="bin\Debug\netcoreapp3.1\Select.Html.dep">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Include="bin\Debug\netcoreapp3.1\Select.HtmlToPdf.dll">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <ProjectExtensions><VisualStudio><UserProperties appsettings_1json__JsonSchema="" /></VisualStudio></ProjectExtensions>
+
+
+</Project>
