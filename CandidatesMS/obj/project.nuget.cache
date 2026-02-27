@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "waVEJA+MNz8=",
+  "dgSpecHash": "zD0mof3GorI=",
   "success": true,
-  "projectFilePath": "C:\\Exsis\\EXstaff\\CandidatesMS\\src\\CandidatesMS\\CandidatesMS.csproj",
+  "projectFilePath": "C:\\Exsis\\eXstaff_pruebas\\src\\CandidatesMS\\CandidatesMS.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Gaston Cardenas\\.nuget\\packages\\adraffy.ensnormalize\\0.1.5\\adraffy.ensnormalize.0.1.5.nupkg.sha512",
     "C:\\Users\\Gaston Cardenas\\.nuget\\packages\\amazon.extensions.cognitoauthentication\\2.5.5\\amazon.extensions.cognitoauthentication.2.5.5.nupkg.sha512",

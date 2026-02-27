@@ -61,10 +61,10 @@ namespace CandidatesMS.Repositories
         /**/
 
         Task<List<Candidate>> GetCandidatesByFilterMaster(string search);
-        Task<List<Candidate>> GetCandidateWithJobProfessions(List<int> jobProfessionIds, int companyUserId);
+        Task<List<Candidate>> GetCandidateWithJobProfessions(List<int> jobProfessionIds,int companyUserId);
         Task<List<Candidate>> GetCandidateWithJobProfessionsMaster(List<int> jobProfessionIds);
-        Task<List<Candidate>> GetCandidatesWithIdsAndSearch(List<int> candidateIds, string search);
-        Task<List<Candidate>> GetCandidateForCurrencyCompany(int currency, int companyUserId);
+        Task<List<Candidate>> GetCandidatesWithIdsAndSearch(List<int> candidateIds,string search);
+        Task<List<Candidate>> GetCandidateForCurrencyCompany(int currency,int companyUserId);
         List<Candidate> GetAllCandidateWithDate(DateTime leftDate, DateTime rightDate);
         public List<Candidate> GetAllCandidateWithDateAndFilter
         (
@@ -97,7 +97,7 @@ namespace CandidatesMS.Repositories
         Task<Candidate> GetOnlyCandidateDataByCandidateId(int candidateId);
         Task<Candidate> GetCandidateToRequest(string email);
 
-        Task<Candidate> ChangeDeleteState(int candidateId, string MemberEmail);
+        Task<Candidate> ChangeDeleteState(int candidateId,string MemberEmail);
         Task<Candidate> ChangeViewSelectionFiles(int candidateId);
         Task<Candidate> ChangeViewHiringFiles(int candidateId);
         Task<Candidate> ChangeDeleteStateCandidate(int candidateId);

@@ -395,7 +395,7 @@ namespace CandidatesMS.Services
 
             return basicInformationOverView;
         }
-
+                
         public async Task<List<CandidateDTO>> CreateCandidates(List<AnalyzeDTO> candidatesToCreate, string memberEmail, string memberName, string memberSurName)
         {
             List<Candidate> candidateList = new List<Candidate>();
@@ -1313,7 +1313,7 @@ namespace CandidatesMS.Services
                     foreach (SalaryAspirationFromSearchDTO salaryAspiration in search.SalaryAspirations)
                     {
                         if (candidatesFilters != null && candidatesFilters.Count > 0 &&
-                            int.Parse(salaryAspiration.CurrencyLowerValue.Replace(".", "").Replace(",", ""))
+                            int.Parse(salaryAspiration.CurrencyLowerValue.Replace(".", "").Replace(",", "")) 
                             < int.Parse(salaryAspiration.CurrencyUpperValue.Replace(".", "").Replace(",", "")) &&
                             int.Parse(salaryAspiration.CurrencyLowerValue.Replace(".", "").Replace(",", "")) >= 0)
                         {
@@ -1330,12 +1330,12 @@ namespace CandidatesMS.Services
 
                                     if (int.TryParse(salaryAspirationString, out salary)) { }
 
-                                    if (int.Parse(salaryAspiration.CurrencyLowerValue.Replace(".", "").Replace(",", "")) == 0 &&
+                                    if (int.Parse(salaryAspiration.CurrencyLowerValue.Replace(".", "").Replace(",", "")) == 0 && 
                                             salary == 0 && salaryAspiration.CurrencyId == candidate.BasicInformation.CurrencyId)
                                     {
                                         candidateSectionListCurrencyExperience.Add(candidate);
                                     }
-                                    else if (int.Parse(salaryAspiration.CurrencyLowerValue.Replace(".", "").Replace(",", "")) <= salary &&
+                                    else if (int.Parse(salaryAspiration.CurrencyLowerValue.Replace(".", "").Replace(",", "")) <= salary && 
                                         int.Parse(salaryAspiration.CurrencyUpperValue.Replace(".", "").Replace(",", "")) >= salary
                                         && salaryAspiration.CurrencyId == candidate.BasicInformation.CurrencyId)
                                     {
@@ -1362,7 +1362,7 @@ namespace CandidatesMS.Services
                                         {
                                             candidateSectionListCurrencyExperience.Add(candidate);
                                         }
-                                        else if (int.Parse(salaryAspiration.CurrencyLowerValue.Replace(".", "").Replace(",", "")) <= salary
+                                        else if (int.Parse(salaryAspiration.CurrencyLowerValue.Replace(".", "").Replace(",", "")) <= salary 
                                             && int.Parse(salaryAspiration.CurrencyUpperValue.Replace(".", "").Replace(",", "")) >= salary
                                             && salaryAspiration.CurrencyId == candidateCompany.CurrencyId)
                                         {
@@ -1991,10 +1991,10 @@ namespace CandidatesMS.Services
                 }
 
                 if (!search.Ascending)
-                    sorted = candidateSectionListDTO.OrderByDescending(x => x.CreationDateNotFormat).ToList();
-                else
-                    sorted = candidateSectionListDTO.OrderBy(x => x.CreationDateNotFormat).ToList();
-
+                        sorted = candidateSectionListDTO.OrderByDescending(x => x.CreationDateNotFormat).ToList();
+                    else
+                        sorted = candidateSectionListDTO.OrderBy(x => x.CreationDateNotFormat).ToList();
+                
                 List<candidateSearchDTO> pageSources = sorted.Skip((search.Page) * search.PageSize).Take(search.PageSize).ToList();
 
                 for (int i = 0; i < pageSources.Count; i++)
@@ -2176,7 +2176,7 @@ namespace CandidatesMS.Services
 
                                     if (int.TryParse(salaryAspirationString, out salary)) { }
 
-                                    if (int.Parse(salaryAspiration.CurrencyLowerValue.Replace(".", "").Replace(",", "")) == 0 &&
+                                    if (int.Parse(salaryAspiration.CurrencyLowerValue.Replace(".", "").Replace(",", "")) == 0 && 
                                         salary == 0 && salaryAspiration.CurrencyId == candidate.BasicInformation.CurrencyId)
                                     {
                                         candidateSectionListCurrencyExperience.Add(candidate);
@@ -2205,13 +2205,13 @@ namespace CandidatesMS.Services
 
                                         if (int.TryParse(salaryAspirationString, out salary)) { }
 
-                                        if (int.Parse(salaryAspiration.CurrencyLowerValue.Replace(".", "").Replace(",", "")) == 0 &&
+                                        if (int.Parse(salaryAspiration.CurrencyLowerValue.Replace(".", "").Replace(",", "")) == 0 && 
                                             salary == 0 && salaryAspiration.CurrencyId == candidateCompany.CurrencyId)
                                         {
                                             candidateSectionListCurrencyExperience.Add(candidate);
                                         }
-                                        else if (int.Parse(salaryAspiration.CurrencyLowerValue.Replace(".", "").Replace(",", "")) <= salary &&
-                                            int.Parse(salaryAspiration.CurrencyUpperValue.Replace(".", "").Replace(",", "")) >= salary &&
+                                        else if (int.Parse(salaryAspiration.CurrencyLowerValue.Replace(".", "").Replace(",", "")) <= salary && 
+                                            int.Parse(salaryAspiration.CurrencyUpperValue.Replace(".", "").Replace(",", "")) >= salary && 
                                             salaryAspiration.CurrencyId == candidateCompany.CurrencyId)
                                         {
                                             candidateSectionListCurrencyExperience.Add(candidate);
@@ -4009,14 +4009,14 @@ namespace CandidatesMS.Services
                         {
                             if (ability.TechnicalAbilityTechnologyId == 54)
                             {
-                                if (languagePlatform == 1)
+                               if(languagePlatform == 1)
                                     abilities = abilities + ability.Other + ":" + ability.TechnicalAbilityLevel.Level + ", ";
-                                else
+                               else
                                     abilities = abilities + ability.Other + ":" + ability.TechnicalAbilityLevel.LevelEnglish + ", ";
                             }
                             else
                             {
-                                if (languagePlatform == 1)
+                                if(languagePlatform == 1)
                                     abilities = abilities + ability.Discipline + ":" + ability.TechnicalAbilityLevel.Level + ", ";
                                 else
                                     abilities = abilities + ability.Discipline + ":" + ability.TechnicalAbilityLevel.LevelEnglish + ", ";
@@ -4316,7 +4316,7 @@ namespace CandidatesMS.Services
 
                 return Report.OrderByDescending(x => x.CreationDate).ToList();
             }
-            catch (Exception ex)
+            catch(Exception ex)
             {
                 return new List<CandidateReportDTO>();
             }
@@ -4324,7 +4324,7 @@ namespace CandidatesMS.Services
 
         public async Task<List<CandidateReportConfigurableDTO>> GetAllCandidatesWithDateAndFilter
         (
-            string emailMemberUser,
+            string emailMemberUser, 
             bool isLanguagesFilter, bool isFullLanguages, List<Candidate_LanguageDTO> languagesFilter,
             bool isTechnicalAbilitiesFilter, bool isFullTechnicalAbilities, List<Candidate_TechnicalAbilityDTO> technicalAbilitiesFilter,
             bool isLocationFilter, bool isFullLocations, string country, string state, string city,
@@ -4446,7 +4446,7 @@ namespace CandidatesMS.Services
                 {
                     foreach (Candidate_Language language in candidate.Candidate_Language)
                     {
-                        if (languagePlatform == 1)
+                        if(languagePlatform == 1)
                             languages = languages + language.Language.LanguageName + ":" + language.LanguageLevel.LanguageLevelName + ", ";
                         else
                             languages = languages + language.Language.LanguageNameEnglish + ":" + language.LanguageLevel.LanguageLevelNameEnglish + ", ";
@@ -4571,7 +4571,7 @@ namespace CandidatesMS.Services
 
                 /* Salary aspirations */
 
-                if (isSalaryAspirationFilter && candidate.BasicInformation != null && !string.IsNullOrEmpty(candidate.BasicInformation.SalaryAspiration) &&
+                if (isSalaryAspirationFilter && candidate.BasicInformation != null && !string.IsNullOrEmpty(candidate.BasicInformation.SalaryAspiration) && 
                     int.Parse(candidate.BasicInformation.SalaryAspiration.Replace(".", "").Replace(",", "")) > 0
                     && candidate.BasicInformation.Currency != null)
                 {
@@ -4585,7 +4585,7 @@ namespace CandidatesMS.Services
                 {
                     foreach (CandidateCompany candidateCompany in candidate.CandidateCompanies)
                     {
-                        if (candidateCompany != null && !string.IsNullOrEmpty(candidateCompany.SalaryAspiration) &&
+                        if (candidateCompany != null && !string.IsNullOrEmpty(candidateCompany.SalaryAspiration) && 
                             int.Parse(candidateCompany.SalaryAspiration.Replace(".", "").Replace(",", "")) > 0 &&
                             candidateCompany.CurrencyId != null && (int)candidateCompany.CurrencyId > 0 && candidateCompany.CompanyUserId == companyUserId)
                         {
@@ -5470,7 +5470,7 @@ namespace CandidatesMS.Services
 
             candidateCompanyDTO.HaveWorkExperience = candidateCompany.HaveWorkExperience;
             candidateCompanyDTO.SalaryAspiration = candidateCompany.SalaryAspiration;
-            candidateCompanyDTO.Address =
+            candidateCompanyDTO.Address = 
                 !string.IsNullOrEmpty(candidateCompany.Address) && candidateCompany.Address.ToLower().Trim() != "[su dirección]" ? candidateCompany.Address : string.Empty;
             candidateCompanyDTO.BirthDate = candidateCompany.BirthDate;
 
