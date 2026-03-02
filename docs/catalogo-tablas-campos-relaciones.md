@@ -1,14 +1,39 @@
-﻿# Catálogo de tablas, campos y relaciones (`CandidatesMS`)
+# Catálogo de tablas, campos y relaciones (`CandidatesMS`)
 
 ## Objetivo
-Este documento lista las tablas (entidades), sus campos y las relaciones inferidas desde los modelos de `Persistence/Entities` y `Persistence/EntitiesCompany`.
+Este catálogo documenta las tablas (entidades), sus campos y las relaciones inferidas desde los modelos de `Persistence/Entities` y `Persistence/EntitiesCompany`, para acelerar análisis de impacto, onboarding técnico y gobierno de cambios de datos.
 
-> Regenerado automáticamente desde el código fuente: **2026-02-27 23:18 UTC**.
-> Nota: el catálogo se basa en clases C# (modelo EF Core) y convenciones de nombres (`*Id`). Puede diferir de constraints físicos exactos de BD si existen configuraciones fluent adicionales o migraciones manuales.
+## Alcance de la iteración
+En esta versión se mejora la capacidad de consumo del catálogo con contexto operativo adicional:
+- Se incluye una guía breve de lectura para equipos de arquitectura, backend y datos.
+- Se explicita la metodología de inferencia para interpretar correctamente cardinalidades y falsas positivas.
+- Se agregan recomendaciones de validación para contrastar el catálogo lógico contra la base física.
 
-## Resumen
+## Metodología de inferencia
+1. Identificación de clases de entidad en código fuente C#.
+2. Extracción de propiedades con convención `*Id` y navegación entre entidades.
+3. Cálculo de relaciones inferidas (`1:N`, `N:1`) por referencias directas e inversas.
+4. Consolidación en una tabla global y detalle por entidad.
+
+> Regenerado automáticamente desde el código fuente: **2026-03-02 00:00 UTC**.
+> Nota: este inventario representa el **modelo lógico** inferido desde EF Core y convenciones de nombres. Puede diferir de constraints físicos reales si existen configuraciones Fluent API, migraciones manuales o scripts SQL fuera del código.
+
+## Resumen ejecutivo
 - Tablas detectadas: **157**.
 - Relaciones inferidas: **281**.
+- Contextos fuente: **CandidateContext** y **CompanyContext**.
+- Uso recomendado: impacto de cambios, trazabilidad de dependencias y priorización de hardening de datos.
+
+## Guía rápida de lectura
+- **Relaciones globales:** vista consolidada para identificar hubs de acoplamiento.
+- **Detalle por tabla:** inventario de campos y relaciones directas por entidad.
+- **Cardinalidad inferida:** orientación arquitectónica; validar contra BD antes de cambios críticos.
+
+## Recomendaciones de validación
+- Validar entidades críticas contra `INFORMATION_SCHEMA` o `pg_catalog` en ambiente objetivo.
+- Confirmar claves compuestas y constraints únicos no deducibles por convención.
+- Revisar tablas puente (`*_` y variantes de tablas puente, o relaciones `Many-to-Many`) antes de ajustar joins/reportes.
+- Incorporar esta revisión al checklist de ADR/PR para cambios de persistencia.
 
 ## Relaciones globales (inferidas)
 | Tabla origen | Tabla destino | FK / Correlación | Cardinalidad |
@@ -2197,4 +2222,3 @@ Este documento lista las tablas (entidades), sus campos y las relaciones inferid
 | `EquivalentPositionId` | `int?` | FK/correlación (convención) |
 | `AdminView` | `bool` | - |
 | `CompanyUserId` | `int` | FK/correlación (convención) |
-
